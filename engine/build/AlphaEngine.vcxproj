@@ -266,6 +266,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\Game.cpp" />
+    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\BaseEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\build\ZERO_CHECK.vcxproj">
