@@ -5,7 +5,17 @@ using namespace std;
 
 BaseEntity::BaseEntity()
 {
-	name = Field(FieldType::STRING);
+	//pass
+}
+
+void BaseEntity::OnCreate()
+{
+	//pass
+}
+
+void BaseEntity::OnDestroy()
+{
+	//pass
 }
 
 Field::Field()
@@ -37,4 +47,10 @@ Field::Field(FieldType t)
 Field::Field(void* val, FieldType t)
 {
 	//pass
+}
+
+void Entity::CallAction(char* name)
+{
+	action a = actions[name];
+	(entity->*a)(actiondata());
 }
