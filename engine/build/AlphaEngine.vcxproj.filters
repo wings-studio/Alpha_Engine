@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\BaseEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\ModelEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\CMakeLists.txt" />

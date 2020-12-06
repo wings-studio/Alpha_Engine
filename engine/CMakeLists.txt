@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(AlphaEngine)
 
-set(SOURCES "src/Game.cpp" "src/BaseEntity.cpp")
+set(SOURCES "src/Game.cpp" "src/BaseEntity.cpp" "src/ModelEntity.cpp")
 
 add_library(AlphaEngine ${SOURCES})
 

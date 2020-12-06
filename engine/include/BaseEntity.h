@@ -1,11 +1,11 @@
 #include <string>
 #include <map>
 #include <vector>
+#include "AlphaObject.h"
 
 using namespace std;
 
 #define EVENT(name, funcname) event name = event(this, funcname)
-#define FIELD(name, type) Field f_##name = Field(&name, FieldType::type)
 #define ACTION(name, funcname) action name = funcname
 
 class BaseEntity;
@@ -36,37 +36,6 @@ public:
 	void link(action a);
 };
 
-enum FieldType
-{
-	BOOLEAN,
-	INT,
-	FLOAT,
-	VECTOR3,
-	QUATERNION,
-	TEXTURE,
-	MATERIAL,
-	MODEL,
-	COLOR,
-	SOUND,
-	SCRIPT,
-	ENTITY,
-	STRING,
-	CHOOSE
-};
-
-class Field
-{
-public:
-	void* value;
-	FieldType type;
-	char* fullName, description;
-
-	Field();
-	Field(void* val);
-	Field(FieldType t);
-	Field(void* val, FieldType t);
-};
-
 class BaseEntity
 {
 public:
@@ -78,23 +47,49 @@ public:
 	void Create(actiondata ad);
 	void Destroy(actiondata ad);
 
+	AlphaProperties GetProps();
+
 	char* name;
-	FIELD(name, STRING);
 	EVENT(onCreate, &BaseEntity::OnCreate);
 	EVENT(onDestroy, &BaseEntity::OnDestroy);
 	ACTION(create, &BaseEntity::Create);
 	ACTION(destroy, &BaseEntity::Destroy);
 };
 
-class Entity
+class AlphaEntity : public AlphaObject
 {
 public:
-	const char* name;
-	BaseEntity* entity;
-	map<char*, Field*> fields;
-	map<char*, event*> events;
-	map<char*, action> actions;
+	AlphaEntity()
+	{
+		entity = NULL;
+	}
+	AlphaEntity(BaseEntity e)
+	{
+		entity = &e;
+	}
 
-	void CallAction(char* name);
+	void InstallEntity(char* name)
+	{
+		if (entity != NULL)
+			InstallProperties(name, entity->GetProps());
+	}
+
+	BaseEntity* entity;
 };
+
+template <class T>
+class EntityFactory
+{
+public:
+	EntityFactory(char* pClassName)
+	{
+		AlphaEntity ae(dynamic_cast<BaseEntity&>(T()));
+		ae.InstallEntity(pClassName);
+	}
+};
+
+#define LINK_ENTITY_TO_CLASS(mapClassName,DLLClassName) \
+	static EntityFactory<DLLClassName> mapClassName( #mapClassName );
+
+LINK_ENTITY_TO_CLASS(base_entity, BaseEntity)
 
