@@ -1,4 +1,7 @@
 # CMake generation dependency list for this directory.
+C:/Program Files (x86)/ReactPhysics3D/lib/cmake/ReactPhysics3D/ReactPhysics3DConfig-release.cmake
+C:/Program Files (x86)/ReactPhysics3D/lib/cmake/ReactPhysics3D/ReactPhysics3DConfig.cmake
+C:/Program Files (x86)/ReactPhysics3D/lib/cmake/ReactPhysics3D/ReactPhysics3DConfigVersion.cmake
 C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCInformation.cmake
 C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCXXInformation.cmake
 C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake

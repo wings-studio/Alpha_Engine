@@ -2,7 +2,6 @@
 #include <vector>
 #include <fstream>
 
-#define add(key, value) insert(make_pair(key, value));
 #define STR(val) AlphaString(val)
 #define INT(val) AlphaInteger(val)
 
@@ -14,20 +13,37 @@ public:
 
 	void Serialize(ofstream* stream);
 	void Deserialize(ifstream* stream);
+	void* GetValue();
 };
 
-typedef map<char*, BaseAlphaObject> AlphaProperties;
+class AlphaProperties
+{
+private:
+	map<char*, BaseAlphaObject> props;
+
+public:
+	AlphaProperties();
+
+	void Add(char* name, BaseAlphaObject value);
+};
 
 class AlphaObject : public BaseAlphaObject
 {
 public:
-	void InstallProperties(char* name, AlphaProperties props)
-	{
-		properties.add(name, props);
-	}
+	AlphaObject();
+
+	AlphaProperties* GetValue();
+
+protected:
+	/// <summary>
+	/// Creates a new template with properties that will be assigned with this name
+	/// </summary>
+	void InstallTemplate(char* name, AlphaProperties props);
+	AlphaProperties GetTemplate(char* name);
 
 private:
-	map<char*, AlphaProperties> properties;
+	static map<char*, AlphaProperties> templates;
+	AlphaProperties props;
 };
 
 class AlphaString : public BaseAlphaObject
@@ -35,6 +51,7 @@ class AlphaString : public BaseAlphaObject
 public:
 	AlphaString();
 	AlphaString(char* val);
+	char* GetValue();
 };
 
 class AlphaInteger : public BaseAlphaObject
@@ -42,4 +59,5 @@ class AlphaInteger : public BaseAlphaObject
 public:
 	AlphaInteger();
 	AlphaInteger(int val);
+	int GetValue();
 };

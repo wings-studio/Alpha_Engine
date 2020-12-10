@@ -11,3 +11,15 @@ link_directories(AlphaEngine "${CMAKE_CURRENT_SOURCE_DIR}/src")
 target_include_directories(AlphaEngine 
 	PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
+
+# Help CMake to find the installed library on Windows or Mac OS X 
+if(WIN32) 
+  list(APPEND CMAKE_PREFIX_PATH "C:\\Program Files (x86)\\ReactPhysics3D") 
+elseif(APPLE) 
+  list(APPEND CMAKE_PREFIX_PATH "/usr/local/lib/cmake/ReactPhysics3D") 
+endif() 
+ 
+# Import the ReactPhysics3D library 
+find_package(ReactPhysics3D REQUIRED) 
+
+target_link_libraries(AlphaEngine ReactPhysics3D::ReactPhysics3D)

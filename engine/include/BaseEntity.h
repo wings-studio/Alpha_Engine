@@ -47,7 +47,7 @@ public:
 	void Create(actiondata ad);
 	void Destroy(actiondata ad);
 
-	AlphaProperties GetProps();
+	virtual AlphaProperties GetProps();
 
 	char* name;
 	EVENT(onCreate, &BaseEntity::OnCreate);
@@ -71,7 +71,7 @@ public:
 	void InstallEntity(char* name)
 	{
 		if (entity != NULL)
-			InstallProperties(name, entity->GetProps());
+			InstallTemplate(name, entity->GetProps());
 	}
 
 	BaseEntity* entity;
@@ -88,8 +88,7 @@ public:
 	}
 };
 
-#define LINK_ENTITY_TO_CLASS(mapClassName,DLLClassName) \
-	static EntityFactory<DLLClassName> mapClassName( #mapClassName );
-
-LINK_ENTITY_TO_CLASS(base_entity, BaseEntity)
+#define DEFINE_ENTITY(mapClassName,DLLClassName) \
+	static EntityFactory<DLLClassName> mapClassName( #mapClassName )
+#define FUNC_GETPROPS AlphaProperties GetProps()
 
