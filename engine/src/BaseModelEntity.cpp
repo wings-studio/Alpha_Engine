@@ -2,13 +2,12 @@
 
 using namespace std;
 
-class ModelEntity : public BaseModelEntity
+AlphaProperties BaseModelEntity::GetProps()
 {
-public:
-
-	int fadeDistance;
-	FUNC_GETPROPS;
-};
+	AlphaProperties props;
+	props.Add("model", STR(model));
+	return props;
+}
 
 AlphaProperties ModelEntity::GetProps()
 {
@@ -16,3 +15,5 @@ AlphaProperties ModelEntity::GetProps()
 	ap.Add("fade_distance", INT(fadeDistance));
 	return ap;
 }
+
+DEFINE_ENTITY(model, ModelEntity);

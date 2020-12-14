@@ -71,7 +71,12 @@ public:
 	void InstallEntity(char* name)
 	{
 		if (entity != NULL)
-			InstallTemplate(name, entity->GetProps());
+			AlphaEntity::InstallTemplate(name, entity->GetProps());
+	}
+
+	void PrintTemplate(char* tname)
+	{
+		GetTemplate(tname).PrintInfo();
 	}
 
 	BaseEntity* entity;

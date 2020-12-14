@@ -7,7 +7,19 @@
     <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\BaseEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\ModelEntity.cpp">
+    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\BaseModelEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\BaseLogicEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\BaseFigureEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\Figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\World of Legends\Alpha_Engine\engine\src\AlphaObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

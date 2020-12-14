@@ -9,9 +9,10 @@ public:
 	FUNC_GETPROPS;
 };
 
-AlphaProperties BaseModelEntity::GetProps()
+class ModelEntity : public BaseModelEntity
 {
-	AlphaProperties props;
-	props.Add("model", STR(model));
-	return props;
-}
+public:
+
+	int fadeDistance;
+	FUNC_GETPROPS;
+};

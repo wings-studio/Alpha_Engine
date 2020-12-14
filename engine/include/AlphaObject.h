@@ -1,9 +1,30 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include <iostream>
+#include "Util.h"
+
+#pragma region Basic Alpha Types define directives 
 
 #define STR(val) AlphaString(val)
 #define INT(val) AlphaInteger(val)
+#define FLOAT(val) AlphaFloat(val)
+#define VEC3(val) AlphaVector3(val)
+
+#pragma endregion
+
+/// Define base alpha type
+#define DEFINE_BAT(ClassName, TypeName) \
+class Alpha##ClassName : public BaseAlphaObject \
+{ \
+public: \
+	Alpha##ClassName(); \
+	Alpha##ClassName(TypeName val); \
+	TypeName GetValue(); \
+ \
+private: \
+	TypeName value; \
+}
 
 using namespace std;
 
@@ -11,8 +32,6 @@ class BaseAlphaObject
 {
 public:
 
-	void Serialize(ofstream* stream);
-	void Deserialize(ifstream* stream);
 	void* GetValue();
 };
 
@@ -25,6 +44,7 @@ public:
 	AlphaProperties();
 
 	void Add(char* name, BaseAlphaObject value);
+	void PrintInfo();
 };
 
 class AlphaObject : public BaseAlphaObject
@@ -46,18 +66,8 @@ private:
 	AlphaProperties props;
 };
 
-class AlphaString : public BaseAlphaObject
-{
-public:
-	AlphaString();
-	AlphaString(char* val);
-	char* GetValue();
-};
-
-class AlphaInteger : public BaseAlphaObject
-{
-public:
-	AlphaInteger();
-	AlphaInteger(int val);
-	int GetValue();
-};
+DEFINE_BAT(String, char*);
+DEFINE_BAT(Integer, int);
+DEFINE_BAT(Float, float);
+DEFINE_BAT(Vector3, Vector3);
+DEFINE_BAT(Boolean, bool);
