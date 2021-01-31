@@ -1,0 +1,5 @@
+project(base CXX)
+file(GLOB GAME_SOURCES "src/*.cpp")
+add_library(base STATIC ${GAME_SOURCES})
+target_link_libraries(base engine)
+target_include_directories(base PUBLIC "include")
