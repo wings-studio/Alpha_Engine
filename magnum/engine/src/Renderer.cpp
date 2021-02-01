@@ -12,6 +12,12 @@ Renderer::Renderer()
     GL::Renderer::enable(GL::Renderer::Feature::FaceCulling);
 }
 
+void Renderer::addCube()
+{
+    GL::Mesh _mesh = MeshTools::compile(Primitives::cubeSolid());
+    new ColoredDrawable(_cameraObject, Shaders::Phong(), _mesh, Color4(), drawables);
+}
+
 void ColoredDrawable::draw(const Matrix4& transformationMatrix, SceneGraph::Camera3D& camera) {
     _shader
         .setDiffuseColor(_color)

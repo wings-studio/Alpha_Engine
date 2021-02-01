@@ -14,6 +14,7 @@
 #include <Magnum/Math/Color.h>
 #include <Magnum/MeshTools/Compile.h>
 #include <Magnum/Platform/Sdl2Application.h>
+#include <Magnum/Primitives/Cube.h>
 #include <Magnum/SceneGraph/Camera.h>
 #include <Magnum/SceneGraph/Drawable.h>
 #include <Magnum/SceneGraph/MatrixTransformation3D.h>
@@ -62,9 +63,14 @@ class Renderer
 public:
 	Renderer();
 
+    void addModel(std::string filePath);
+    void addCube();
+
+    void render();
 private:
 
     Scene3D _scene;
     Object3D _cameraObject;
     SceneGraph::Camera3D* _camera;
+    SceneGraph::DrawableGroup3D drawables;
 };
