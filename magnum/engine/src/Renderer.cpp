@@ -10,6 +10,21 @@ Renderer::Renderer()
 
     GL::Renderer::enable(GL::Renderer::Feature::DepthTest);
     GL::Renderer::enable(GL::Renderer::Feature::FaceCulling);
+    _coloredShader
+        .setAmbientColor(0x111111_rgbf)
+        .setSpecularColor(0xffffff_rgbf)
+        .setShininess(80.0f);
+    _texturedShader
+        .setAmbientColor(0x111111_rgbf)
+        .setSpecularColor(0x111111_rgbf)
+        .setShininess(80.0f);
+
+    PluginManager::Manager<Trade::AbstractImporter> manager;
+    Containers::Pointer<Trade::AbstractImporter> importer = manager.loadAndInstantiate("AnySceneImporter");
+
+    if (!importer) std::exit(1);
+
+
 }
 
 void Renderer::addCube()

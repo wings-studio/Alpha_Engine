@@ -69,6 +69,11 @@ public:
     void render();
 private:
 
+    Shaders::Phong _coloredShader,
+        _texturedShader{ Shaders::Phong::Flag::DiffuseTexture };
+    Containers::Array<Containers::Optional<GL::Mesh>> _meshes;
+    Containers::Array<Containers::Optional<GL::Texture2D>> _textures;
+
     Scene3D _scene;
     Object3D _cameraObject;
     SceneGraph::Camera3D* _camera;

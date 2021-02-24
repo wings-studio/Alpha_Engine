@@ -7,3 +7,8 @@ Map::Map()
 Map::~Map()
 {
 }
+
+void Map::run()
+{
+	renderer.render();
+}
