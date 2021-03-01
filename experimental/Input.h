@@ -1,7 +1,7 @@
 #include "ae_std.h"
 #include "ae_math.h"
 
-enum class Key {
+enum Key {
     Unknown,
 	LeftShift,
 	RightShift,
@@ -116,12 +116,16 @@ enum class Button
 	X2
 };
 
-typedef Event<Key, const char*> KeyEvent;
-typedef Event<Button, Vector2> MouseEvent;
+typedef Event<Key, const char*> KeyEvent; // key, name of key
+typedef Event<Button, Vector2> MouseEvent; // button, position
+typedef Event<Vector2, Vector2> MouseMoveEvent; // relative pos, pos
+typedef Event<Vector2, Vector2> MouseScrollEvent; // offset, position
 
 class Input
 {
 public:	
 	static KeyEvent onKeyPressed, onKeyReleased;
 	static MouseEvent onMousePressed, onMouseReleased;
+	static MouseMoveEvent onMouseMoved;
+	static MouseScrollEvent onMouseScrolled;
 };

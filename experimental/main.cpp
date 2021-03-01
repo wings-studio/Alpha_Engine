@@ -14,8 +14,8 @@ int main()
 {
 	Vector2 v;
 	std::cin >> v.x >> v.y;
-	Event<float, float> e; // THIS IS WORKS
-	e.addHandler(Action<float, float>(plus)); // VARIADIC TEMPLATES IS WORKS
-	e.addHandler(Action<float, float>(minus)); // AHAHAHAH
-	e.exec(v.x, v.y); // YEEEEEEEEEEEEEEEEEEEEEEEEEEEAH
+	Event<float, float> e;
+	e.addHandler(Action<float, float>(plus));
+	e.addHandler(Action<float, float>(minus));
+	e.exec(v.x, v.y);
 }
