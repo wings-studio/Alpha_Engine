@@ -1,19 +1,21 @@
 #include <iostream>
 #include "Input.h"
 
-void minus(int a, int b)
+void minus(float a, float b)
 {
 	std::cout << a - b << std::endl;
 }
-void plus(int a, int b)
+void plus(float a, float b)
 {
 	std::cout << a + b << std::endl;
 }
 
 int main()
 {
-	Event<int, int> e; // THIS IS WORKS
-	e.addHandler(Action<int, int>(plus)); // VARIADIC TEMPLATES IS WORKS
-	e.addHandler(Action<int, int>(minus)); // AHAHAHAH
-	e.exec(3, 6); // YEEEEEEEEEEEEEEEEEEEEEEEEEEEAH
+	Vector2 v;
+	std::cin >> v.x >> v.y;
+	Event<float, float> e; // THIS IS WORKS
+	e.addHandler(Action<float, float>(plus)); // VARIADIC TEMPLATES IS WORKS
+	e.addHandler(Action<float, float>(minus)); // AHAHAHAH
+	e.exec(v.x, v.y); // YEEEEEEEEEEEEEEEEEEEEEEEEEEEAH
 }

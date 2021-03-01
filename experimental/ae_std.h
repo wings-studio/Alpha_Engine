@@ -1,6 +1,8 @@
 #include <vector>
 
 typedef unsigned int uint;
+typedef unsigned long ulong;
+typedef unsigned short ushort;
 
 template<typename... T>
 class Action
