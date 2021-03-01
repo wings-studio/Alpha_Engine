@@ -1,61 +1,85 @@
-#include <iostream>
 #include <vector>
+#include "ae_std.h"
 
-template<typename T>
-class Action
-{
-public:
-	Action()
-	{
-	}
-	Action(void(*func)(T))
-	{
-		setFunc(func);
-	}
-	~Action()
-	{
-	}
-	
-	void setFunc(void(*func)(T))
-	{
-		action = func;
-	}
-	void exec(T param)
-	{
-		(*action)(param);
-	}
-private:
-	void(*action)(T);	
+enum class Key {
+    Enter,
+    Esc,
+
+    Up,
+    Down,
+    Left,
+    Right,
+    F1,
+    F2,
+    F3,
+    F4,
+    F5,
+    F6,
+    F7,
+    F8,
+    F9,
+    F10,
+    F11,
+    F12,
+    Home,
+    End,
+    PageUp,
+    PageDown,
+
+    Space,
+    Comma,
+    Period,
+    Minus,
+    Plus,
+    Slash,
+    Percent,
+    Equal,
+
+    Zero,
+    One,
+    Two,
+    Three,
+	Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+	J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z
 };
 
-template<typename T>
-class Event
+struct KeyEvent
 {
-public:
-	Event()
-	{
-	}
-	~Event()
-	{
-	}
-	
-	void addHandler(Action<T> handler)
-	{
-		handlers.push_back(handler);
-	}
-	void exec(T param)
-	{
-		for (int i = 0; i < handlers.size(); i++)
-		{
-			handlers[i].exec(param);
-		}
-	}
-private:
-	std::vector<Action<T> > handlers;
+	Key key;
 };
 
 class Input
 {
-public:
-	//static 	
+public:		
 };

@@ -1,19 +1,19 @@
 #include <iostream>
 #include "Input.h"
 
-void print(int a)
+void minus(int a, int b)
 {
-	std::cout << a << std::endl;
+	std::cout << a - b << std::endl;
 }
-void square(int a)
+void plus(int a, int b)
 {
-	std::cout << a * a << std::endl;
+	std::cout << a + b << std::endl;
 }
 
 int main()
 {
-	Event<int> e;
-	e.addHandler(Action<int>(print));
-	e.addHandler(Action<int>(square));
-	e.exec(3);
+	Event<int, int> e; // THIS IS WORKS
+	e.addHandler(Action<int, int>(plus)); // VARIADIC TEMPLATES IS WORKS
+	e.addHandler(Action<int, int>(minus)); // AHAHAHAH
+	e.exec(3, 6); // YEEEEEEEEEEEEEEEEEEEEEEEEEEEAH
 }
