@@ -1,6 +1,4 @@
 #ifdef __cplusplus
-namespace AlphaEngine { namespace Math
-{
 extern "C" 
 {
 #endif
@@ -16,6 +14,5 @@ extern "C"
 	};
 	
 #ifdef __cplusplus
-} // end of extern "C"
-} } // end of namespace
+}
 #endif

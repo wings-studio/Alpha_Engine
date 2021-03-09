@@ -7,7 +7,6 @@ void ae_onMouseReleased(void(func*)(unsigned int, Vector2));
 
 #ifdef __cplusplus
 #include <Input.h>
-using namespace AlphaEngine::Input;
 extern "C"
 {
 	void ae_onKeyPressed(void(func*)(unsigned int, const char*))

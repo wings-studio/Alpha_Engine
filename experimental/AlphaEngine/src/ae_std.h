@@ -1,13 +1,8 @@
 #include <vector>
-#include <string>
 
 typedef unsigned int uint;
 typedef unsigned long ulong;
 typedef unsigned short ushort;
-typedef std::string str;
-
-namespace AlphaEngine
-{
 
 template<typename... T>
 class Action
@@ -61,5 +56,3 @@ public:
 private:
 	std::vector<Action<T...> > handlers;
 };
-
-} // end of namespace

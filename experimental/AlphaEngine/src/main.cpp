@@ -1,10 +1,6 @@
 #include <iostream>
 #include "Input.h"
 
-using namespace AlphaEngine::Input;
-using namespace AlphaEngine::Math;
-using namespace AlphaEngine;
-
 void minus(float a, float b)
 {
 	std::cout << a - b << std::endl;

@@ -1,12 +1,6 @@
 #include "ae_std.h"
 #include "ae_math.h"
 
-using namespace AlphaEngine::Math;
-using namespace AlphaEngine;
-
-namespace AlphaEngine { namespace Input
-{
-
 enum Key : uint
 {
     Unknown,
@@ -136,5 +130,3 @@ public:
 	static MouseMoveEvent onMouseMoved;
 	static MouseScrollEvent onMouseScrolled;
 };
-
-} } // end of namespace

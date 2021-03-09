@@ -1,0 +1,5 @@
+C:/Users/User/Desktop/World of Legends/Alpha_Engine/experimental/AlphaEngine/out/build/x64-Debug (по умолчанию)/CMakeFiles/edit_cache.dir
+C:/Users/User/Desktop/World of Legends/Alpha_Engine/experimental/AlphaEngine/out/build/x64-Debug (по умолчанию)/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Desktop/World of Legends/Alpha_Engine/experimental/AlphaEngine/out/build/x64-Debug (по умолчанию)/src/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Desktop/World of Legends/Alpha_Engine/experimental/AlphaEngine/out/build/x64-Debug (по умолчанию)/src/CMakeFiles/AlphaEngine.dir
+C:/Users/User/Desktop/World of Legends/Alpha_Engine/experimental/AlphaEngine/out/build/x64-Debug (по умолчанию)/src/CMakeFiles/edit_cache.dir
